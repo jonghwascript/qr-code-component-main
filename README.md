@@ -24,8 +24,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/jonghwascript/qr-code-component-main.git)
+- Live Site URL: [Add live site URL here](https://github.com/jonghwascript/qr-code-component-main/settings/pages)
 
 ## My process
 
@@ -42,7 +42,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 #### CSS Container Queries
 
-컨테이너 쿼리를 사용하여 부모 요소의 크기에 따라 반응하는 레이아웃을 구현했습니다.
+I implemented a responsive layout that adapts based on the parent element's size using container queries.
 
 ```css
 .container {
@@ -53,18 +53,18 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 #### CSS clamp() for fluid sizing
 
-`clamp()` 함수를 사용하여 breakpoint 없이 부드럽게 크기가 조절되는 레이아웃을 만들었습니다.
+I created a smoothly resizing layout without breakpoints using the `clamp()` function.
 
 ```css
 .qr-stage {
-  /* 375px ~ 960px 사이에서 컨테이너 크기에 맞게 자동 조절 */
+  /* Automatically adjusts between 375px and 960px based on container size */
   width: clamp(var(--minWidth), 100%, 960px);
 }
 ```
 
 #### BEM naming convention
 
-클래스 네이밍에 BEM 방식을 적용하여 구조를 명확하게 표현했습니다.
+I applied the BEM methodology for class naming to clearly express the structure.
 
 ```html
 <article class="qr-card">
@@ -78,24 +78,24 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Continued development
 
-- CSS Container Queries를 더 복잡한 레이아웃에 적용해보고 싶습니다.
-- 시맨틱 HTML 태그 선택에 대한 이해를 더 깊이 하고 싶습니다.
+- I want to apply CSS Container Queries to more complex layouts.
+- I want to deepen my understanding of semantic HTML tag selection.
 
 ### Useful resources
 
-- [PerfectPixel Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi) - 디자인 시안과 실제 구현을 픽셀 단위로 비교할 수 있어서 정확한 사이즈를 파악하는 데 도움이 되었습니다.
-- [MDN - CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries) - 컨테이너 쿼리의 개념과 사용법을 이해하는 데 도움이 되었습니다.
-- [MDN - clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) - clamp 함수의 동작 방식을 이해하는 데 참고했습니다.
+- [PerfectPixel Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi) - This helped me compare the design mockup with the actual implementation pixel by pixel, making it easier to determine exact sizes.
+- [MDN - CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries) - This helped me understand the concept and usage of container queries.
+- [MDN - clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) - I referenced this to understand how the clamp function works.
 
 ### AI Collaboration
 
 - **Tool used**: Claude Code (Anthropic's CLI for Claude)
 - **How I used it**:
-  - 코드 리뷰 및 접근성 점검
-  - CSS 클래스 네이밍 개선 (BEM 방식 적용)
-  - 컨테이너 쿼리에서 CSS 변수 사용 제한 사항 확인
-  - `clamp()` 함수를 활용한 반응형 레이아웃 최적화
-- **What worked well**: 코드 리뷰를 통해 중복 코드, 잘못된 lang 속성, style-guide 색상 미적용 등의 문제점을 빠르게 파악할 수 있었습니다.
+  - Code review and accessibility checks
+  - CSS class naming improvements (applying BEM methodology)
+  - Identifying limitations of CSS variables in container query conditions
+  - Optimizing responsive layout using the `clamp()` function
+- **What worked well**: Through code review, I was able to quickly identify issues such as duplicate code, incorrect lang attribute, and missing style-guide colors.
 
 ## Author
 
@@ -103,7 +103,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ## Questions for the community
 
-HTML 구조에 대해 피드백을 받고 싶습니다.
+I would like feedback on the HTML structure.
 
-- 현재 `<img>` 태그를 단독으로 사용하고 있는데, `<figure>`로 감싸는 것이 더 적절할까요?
-- QR 코드 이미지의 경우 `<figure>`와 `<figcaption>`을 사용하는 것이 시맨틱적으로 더 올바른 접근인지 궁금합니다.
+- I'm currently using the `<img>` tag standalone. Would it be more appropriate to wrap it with `<figure>`?
+- I'm curious if using `<figure>` and `<figcaption>` would be a more semantically correct approach for a QR code image.
