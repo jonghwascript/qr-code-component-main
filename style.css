@@ -1,54 +1,40 @@
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-* {
-    box-sizing: border-box;
+:root {
+  --slate-900: #1F314F;
+  --slate-500: #68778D;
+  --slate-300: #D5E1EF;
 }
 
-h1, p{
+* {
+  box-sizing: border-box;
+}
+
+h1,
+p {
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  font-size: 0.9375rem;
+  background-color: var(--slate-300);
 }
 
 .container {
-  --maxWidth: 1440px;
-  --minWidth: 375px;
-
-  max-width: var(--maxWidth);
-  min-width: var(--minWidth);
-  height: 80vh;
-  margin: 0 auto;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  container-type: inline-size;
-  container-name: qr-container;
-}
-
-.qr-stage {
-  /* 375px ~ 960px 사이에서 컨테이너 크기에 맞게 자동 조절 */
-  width: clamp(var(--minWidth), 100%, 960px);
-  height: 640px;
-  border: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: hsl(212, 45%, 89%);
 }
 
 .qr-card {
-  flex: 0 1 320px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
   padding: 16px;
   background-color: #fff;
   border-radius: 20px;
@@ -58,25 +44,30 @@ body{
 
 .qr-card__image {
   width: 100%;
-  max-width: 288px;
   aspect-ratio: 1;
   border-radius: 10px;
   object-fit: cover;
-  vertical-align: bottom;
+}
+
+.qr-card__content {
+  margin-top: 24px;
+  padding: 0 16px;
 }
 
 .qr-card__title {
   text-align: center;
-  font-size: 1.375rem;
+  font-size: 22px;
+  line-height: 1.2;
   font-weight: 700;
-  color: hsl(218, 44%, 22%);
+  color: var(--slate-900);
 }
 
 .qr-card__description {
-  margin-top: 10px;
+  margin-top: 16px;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 15px;
+  line-height: 1.4;
   font-weight: 400;
-  padding-bottom: 20px;
-  color: hsl(216, 15%, 48%);
+  padding-bottom: 24px;
+  color: var(--slate-500);
 }
