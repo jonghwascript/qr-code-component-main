@@ -42,8 +42,6 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### What I learned
 
-The accessibility and BEM lessons below are also documented in [Learning Notes](./doc/LESSON.md).
-
 #### CSS Container Queries
 
 I implemented a responsive layout that adapts based on the parent element's size using container queries.
@@ -106,7 +104,7 @@ For purely decorative images, provide an empty `alt` attribute so screen readers
 
 ### Code review takeaways
 
-The feedback collected in [Code Review Notes](./doc/CODE_REVIEW_NOTES.md) provides the following guidelines for this component. These are review points to verify, rather than a record of completed fixes.
+The collected code review feedback provides the following guidelines for this component. These are review points to verify, rather than a record of completed fixes.
 
 1. **Use `rem` for font sizes.** Relative font sizes respect the user's default browser font size. With a 16px root font size, 12px is `0.75rem`, 15px is `0.9375rem`, and 22px is `1.375rem`.
 2. **Separate layout defaults from typography.** Apply `box-sizing: border-box` through the universal selector, and declare `font-family` and the base `font-size` on `body`.
