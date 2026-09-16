@@ -10,6 +10,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [Code review takeaways](#code-review-takeaways)
+  - [Submission checklist](#submission-checklist)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
@@ -40,6 +42,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### What I learned
 
+The accessibility and BEM lessons below are also documented in [Learning Notes](./doc/LESSON.md).
+
 #### CSS Container Queries
 
 I implemented a responsive layout that adapts based on the parent element's size using container queries.
@@ -66,15 +70,65 @@ I created a smoothly resizing layout without breakpoints using the `clamp()` fun
 
 I applied the BEM methodology for class naming to clearly express the structure.
 
+- **Block:** An independent, reusable component, such as `.qr-card` or `.btn`.
+- **Element:** A part that belongs to a block, joined with two underscores, such as `.qr-card__title` or `.btn__icon`.
+- **Modifier:** A variation in appearance or state, joined with two hyphens, such as `.btn--primary` or `.btn--disabled`.
+
 ```html
 <article class="qr-card">
-  <img class="qr-card__image" />
+  <img src="./images/image-qr-code.png" alt="QR code to visit the Frontend Mentor website" class="qr-card__image" />
   <div class="qr-card__content">
     <h1 class="qr-card__title">...</h1>
     <p class="qr-card__description">...</p>
   </div>
 </article>
 ```
+
+Three practical rules help keep BEM names consistent:
+
+1. Keep element names flat instead of mirroring every level of HTML nesting: use `.card__price-current` instead of `.card__content__price-group__current-price`.
+2. Add modifiers alongside the original class: use `<article class="card card--supervisor">` instead of `<article class="card--supervisor">`.
+3. Join words within a name with a single hyphen, as in `.team-builder__title` or `.card__price-group`.
+
+#### Alternative text for images
+
+Meaningful images need alternative text that conveys their information or purpose to users who cannot see them. For example, a profile image can identify the person and their role:
+
+```html
+<img src="profile.jpg" alt="Sarah Chen, Senior Developer">
+```
+
+For purely decorative images, provide an empty `alt` attribute so screen readers can skip them:
+
+```html
+<img src="decorative-border.svg" alt="">
+```
+
+### Code review takeaways
+
+The feedback collected in [Code Review Notes](./doc/CODE_REVIEW_NOTES.md) provides the following guidelines for this component. These are review points to verify, rather than a record of completed fixes.
+
+1. **Use `rem` for font sizes.** Relative font sizes respect the user's default browser font size. With a 16px root font size, 12px is `0.75rem`, 15px is `0.9375rem`, and 22px is `1.375rem`.
+2. **Separate layout defaults from typography.** Apply `box-sizing: border-box` through the universal selector, and declare `font-family` and the base `font-size` on `body`.
+3. **Remove development-only styles.** Remove the resizing demo's `resize: horizontal`, `overflow: hidden`, dashed debug border, and related comments before submission.
+4. **Check dimensions against the reference design.** Aim for an approximately 288px square QR image at the reference size, verify card padding and border radius, and make the title visually distinct from the body text.
+5. **Keep the image flexible.** Combine `width: 100%`, `max-width: 288px`, and `aspect-ratio: 1` so the QR image can shrink within its container while remaining square.
+6. **Match the document language to the content.** Use `<html lang="en">` for the English page so screen readers use the appropriate pronunciation rules, and give the page a descriptive title such as `QR Code Component`.
+7. **Provide a main landmark.** Wrap the primary content in `<main>` to support screen-reader landmark navigation.
+8. **Describe the QR image's purpose in its alternative text.** Explain its destination, for example `alt="QR code to visit the Frontend Mentor website"`, instead of only saying `QR code`.
+9. **Proofread the text.** Check spelling before submission, including using `front-end` instead of `font-end`.
+
+### Submission checklist
+
+Use this checklist for a final review; unchecked items do not indicate confirmed defects.
+
+- [ ] Font sizes use `rem` units.
+- [ ] Development-only styles and comments have been removed.
+- [ ] The document's `lang` attribute matches the content language.
+- [ ] The primary content has a `<main>` landmark.
+- [ ] The image's `alt` text explains its purpose or destination.
+- [ ] Dimensions match the reference design.
+- [ ] Text has been checked for spelling mistakes.
 
 ### Continued development
 
